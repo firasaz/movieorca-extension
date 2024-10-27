@@ -1,0 +1,18 @@
+{
+    "name": "Clean up movieorca page",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description": "A simple extension that grabs certain elements in the movie orca web page and removes unneccesary element",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.movieorca.com/watch-movie/*", 
+                "https://*.movieorca.com/watch-tv/*"
+            ],
+            "js": ["content-script.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
