@@ -6,11 +6,28 @@
     "content_scripts": [
         {
             "matches": [
-                "https://*.movieorca.com/watch-movie/*", 
+                "https://*.movieorca.com/watch-movie/*",
                 "https://*.movieorca.com/watch-tv/*"
             ],
-            "js": ["content-script.js"]
+            "js": [
+                "content-script.js"
+            ],
+            "run_at": "document_idle"
+        },
+        {
+            "matches": [
+                "https://*.movieorca.com/watch-movie/*",
+                "https://*.movieorca.com/watch-tv/*"
+            ],
+            "js": [
+                "subtitles.js"
+            ]
         }
+    ],
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "storage"
     ],
     "action": {
         "default_popup": "popup.html"
